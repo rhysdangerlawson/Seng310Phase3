@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.rhys.logol.seng310phase3.GraphPage"
+    android:orientation="vertical"
+    android:weightSum="1"
+    android:layout_margin="10dp">
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+
+        <!--back button-->
+        <Button
+            android:layout_width="75dp"
+            android:layout_height="40dp"
+            android:id="@+id/back_button"
+            android:background="@drawable/back_button"
+            />
+
+        <!--Plus Button-->
+        <Button
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/plus_button"
+            android:background="@drawable/plus_button"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.github.mikephil.charting.charts.PieChart
+            android:layout_width="368dp"
+            android:layout_height="match_parent"
+            android:id="@+id/graph">
+        </com.github.mikephil.charting.charts.PieChart>
+    </RelativeLayout>
+</LinearLayout>
