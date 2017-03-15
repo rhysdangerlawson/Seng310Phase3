@@ -1,97 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
     android:id="@+id/activity_calender"
-    android:layout_gravity="center_horizontal">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <RelativeLayout
+    <!--top portion of screen-->
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:layout_marginBottom="10dp">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/profile_pic"
-                android:background="@drawable/defaultprofilepicture"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/id"
-                android:layout_marginLeft="20dp"
-                android:text="UserID"
-                android:textAlignment="center"
-                android:layout_marginTop="10dp"
-                android:textColor="@android:color/background_dark"
-                android:visibility="visible" />
-        </LinearLayout>
+        <!--User ID-->
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="20dp"
-            android:layout_marginTop="20dp">
-
+            android:gravity="center_horizontal">
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="Settings"
-                android:id="@+id/settings" />
+                android:id="@+id/user_id_button"
+                android:background="@drawable/defaultprofilepicture"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
 
-            <Button
-                android:layout_width="match_parent"
+            <!--right hand side of top screen-->
+            <TextView
+                android:text="UserID"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp"
-                android:text="Add Event"
-                android:id="@+id/add_event" />
+                android:id="@+id/textView3"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp" />
         </LinearLayout>
 
-    </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+
+            <!--settings-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="settings"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dp"/>
+                <Button
+                    android:id="@+id/settings_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="fill_horizontal|right"
+                    android:background="@drawable/settings_button"/>
+
+            </LinearLayout>
+
+            <!--confirm time slot-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="confirm time slot"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dp"/>
+
+                <Button
+                    android:id="@+id/confirm_time_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/plus_button"/>
+
+            </LinearLayout>
+
+            <!--back to event details-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <CalendarView
+        android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/calendarView"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <Button
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/graph"
-            android:text="Generate Time Graph"
-            android:textSize="14sp"
-            android:gravity="center_horizontal"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true" />
-
-    </RelativeLayout>
+        android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_gravity="center_horizontal"
-        android:gravity="center_horizontal">
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
         <Button
+            android:id="@+id/week_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View By Week" />
+
+        <Button
+            android:id="@+id/graph"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Generate Time Graph"
+            android:textSize="14sp" />
+
+        <Button
             android:id="@+id/display_error"
-            android:text="Display Time Conflict"
-            android:gravity="center_horizontal" />
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="Display Time Conflict" />
     </LinearLayout>
 </LinearLayout>
