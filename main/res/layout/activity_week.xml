@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_calender"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!--top portion of screen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/linearLayout"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:weightSum="1"
+        android:layout_marginBottom="10dp"
+        tools:ignore="ObsoleteLayoutParam">
+
+        <!--User ID-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            <Button
+                android:id="@+id/user_id_button"
+                android:background="@drawable/defaultprofilepicture"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <!--right hand side of top screen-->
+            <TextView
+                android:text="UserID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp"
+                tools:ignore="InefficientWeight" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+
+            <!--settings-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="settings"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dp"/>
+                <Button
+                    android:id="@+id/settings_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="fill_horizontal|right"
+                    android:background="@drawable/settings_button"/>
+
+            </LinearLayout>
+
+            <!--confirm time slot-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="confirm time slot"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dp"/>
+
+                <Button
+                    android:id="@+id/confirm_time_button"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/plus_button"/>
+
+            </LinearLayout>
+
+            <!--back to event details-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical|right"
+                tools:ignore="UselessLeaf">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:id="@+id/weekView"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:background="@drawable/week" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <Button
+                android:id="@+id/week1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Week 1 (Jan 30 - Feb 5)" />
+
+            <Button
+                android:id="@+id/week2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Week 2 (Feb 6 - 12)" />
+
+            <Button
+                android:id="@+id/week3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Week 3 (Fed 13 - 19)" />
+
+            <Button
+                android:id="@+id/week4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Week 4 (Feb 27 - Mar 5)" />
+
+            <Button
+                android:id="@+id/calender_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="View By Month" />
+
+            <Button
+                android:id="@+id/graph"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Generate Time Graph"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/display_error"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="Display Time Conflict" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>
