@@ -11,22 +11,21 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class CalenderActivity extends AppCompatActivity implements View.OnClickListener {
-    ImageView profilePic;
-
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
 
         getSupportActionBar().hide();
 
-        Button settings = (Button) findViewById(R.id.settings);
-        Button addEvent = (Button) findViewById(R.id.add_event);
+        Button settings = (Button) findViewById(R.id.settings_button);
+        Button addEvent = (Button) findViewById(R.id.confirm_time_button);
         Button graph = (Button) findViewById(R.id.graph);
         Button displayError = (Button) findViewById(R.id.display_error);
+        Button weekView = (Button) findViewById(R.id.week_view);
 
-        TextView userID = (TextView) findViewById(R.id.id);
+        TextView userID = (TextView) findViewById(R.id.textView3);
 
-        profilePic = (ImageView) findViewById(R.id.profile_pic);
+        Button profilePic = (Button) findViewById(R.id.user_id_button);
 
         userID.setText("UserId");
 
@@ -34,13 +33,14 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
         addEvent.setOnClickListener(CalenderActivity.this);
         graph.setOnClickListener(CalenderActivity.this);
         displayError.setOnClickListener(CalenderActivity.this);
+        weekView.setOnClickListener(CalenderActivity.this);
     }
 
     @Override public void onClick(View view) {
         int i = view.getId();
-        if(i == R.id.settings){
+        if(i == R.id.settings_button){
             startActivity(new Intent(this,Settings.class));
-        }if(i == R.id.add_event){
+        }if(i == R.id.confirm_time_button){
             startActivity(new Intent(this,AddEvent.class));
         }if(i == R.id.graph){
             startActivity(new Intent(this,GraphPage.class));
@@ -51,6 +51,8 @@ public class CalenderActivity extends AppCompatActivity implements View.OnClickL
             Toast.makeText(this, "Successfully Merged Event.", Toast.LENGTH_SHORT).show();
         }if(i == R.id.replace_button){
             Toast.makeText(this, "Successfully Replaced Event.", Toast.LENGTH_SHORT).show();
+        }if(i == R.id.week_view){
+            startActivity(new Intent(this,WeekActivity.class));
         }
     }
 
